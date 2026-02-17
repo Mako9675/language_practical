@@ -3,7 +3,6 @@
 /*ヘッダーの要素*/
 
 .layout{
-	display:grid;
 	grid-template:
 		"header header header" auto /* 1行目：3列すべてをヘッダーで占め、高さは自動(auto) */
 		"...... ...... ......" 10px /* 2行目：空白行(点は何も配置しない)。高さ10pxの余白として利用 */
@@ -11,28 +10,54 @@
 		"...... ...... ......" 10px /* 4行目：空白行。高さ10pxの余白 */
 		"footer footer footer" auto /* 5行目：3列すべてをフッターで占め、高さは自動(auto) */
 		/ 260px 10px 1fr; /* 列幅：左から260px、10px(隙間)、右が残りスペースいっぱい(1fr) */
-	
-	/*要素を横並び*/
-	grid-template-columns: repeat(2, 1fr);
-	gap: 10px;
 }
 
 .site-header{
-	/*display:flex;*/
-	/*align-items: center;*/
-	/*grid-template-rows: subgrid;*/
-	/*grid-row: span 1;*/
+	display:flex;
+	align-items: center;
 	grid-area:header; /* grid-templateで指定した"header"のエリアに配置 */
-	border-bottom: 1px solid #333;
+	border-bottom: 1px solid #dcdcdc; /*薄いグレーのライン*/
 }
 
 .btn{
-	/*padding:10px 10px;*/
 	width:35px;
 	height:35px;
 	color:white; /*文字色を白*/
 	background:#2bb07b; /*背景色を緑*/
 	border:none; /*枠線なし*/
 	border-radius:50%; /*丸くする*/
-	/*margin-right:10px;*/
+	margin-right:10px; /*左に余白*/
+}
+
+
+/*サイドバーの要素*/
+
+ul{
+	list-style: none;
+}
+
+/*
+a{
+	display:block;
+	padding:16px;
+}
+*/
+
+.side-menu-demo{
+	padding:14px;
+	border-radius:16px;
+}
+
+.side-menu{
+	width:100px;
+	margin:10px;
+	background:white;
+	border-radius:14px;
+}
+
+.title::before{
+	width:8px;
+	height:34px;
+	content:"";
+	background:#f28b82;
 }
