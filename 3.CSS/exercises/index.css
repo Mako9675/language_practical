@@ -32,30 +32,32 @@
 
 /*サイドバーの要素*/
 
-ul{
-	list-style: none;
-}
-
-/*
-a{
-	display:block;
-	padding:16px;
-}
-*/
-
-.side-menu-demo{
-	padding:14px;
-	border-radius:16px;
-}
 
 .side-menu{
-	width:100px;
-	margin:10px;
-	background:white;
-	border-radius:14px;
+	display: flex;
+	flex-direction: column; /*縦に並べる*/
+	width: 200px; /*横幅200px*/
 }
 
-.title::before{
+.side-item{
+	padding:10px; /*周りに10px*/
+	width: 100%; /*横幅いっぱい*/
+	background: #4169e1; /*いったんわかりやすくする用*/
+}
+
+a{
+	display: block; /*ブロック要素？*/
+	text-decoration:none; /*下線を消す*/
+	color:white; /*文字色を白*/
+	a  text-decoration: none; /*不変にする*/
+}
+
+.side-item:hover{
+	display: block; /*ブロック要素？*/
+	background: #ffff00; /*いったんわかりやすくする用*/
+}
+
+.side-item::before{
 	width:8px;
 	height:34px;
 	content:"";
