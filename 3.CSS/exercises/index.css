@@ -40,26 +40,41 @@
 }
 
 .side-item{
+	display: flex;
+	position: relative; /*要素の配置と子要素の起点を指定*/
+	align-items: center; /*フレックス軸（縦方向）で中央揃え*/
 	padding:10px; /*周りに10px*/
 	width: 100%; /*横幅いっぱい*/
-	background: #4169e1; /*いったんわかりやすくする用*/
+	margin:5px; /*外側に10px*/
+	gap:8px; /*要素のあいだの隙間*/
+	border-radius:10px; /*丸くする*/
+	/*background: #4169e1; いったんわかりやすくする用*/
 }
 
 a{
 	display: block; /*ブロック要素？*/
 	text-decoration:none; /*下線を消す*/
-	color:white; /*文字色を白*/
+	/*color:white; 文字色を白*/
 	a  text-decoration: none; /*不変にする*/
 }
 
 .side-item:hover{
-	display: block; /*ブロック要素？*/
-	background: #ffff00; /*いったんわかりやすくする用*/
+	display: flex; /*ブロック要素？*/
+	/*background: #ffff00; いったんわかりやすくする用*/
+	background: #dcdcdc
 }
 
 .side-item::before{
 	width:8px;
 	height:34px;
 	content:"";
+	display: block;
 	background:#f28b82;
+}
+
+.side-item::after{
+	position:  absolute; /*要素の配置を指定*/
+	right:10px;
+	content:">>";
+	color:#a9a9a9;
 }
