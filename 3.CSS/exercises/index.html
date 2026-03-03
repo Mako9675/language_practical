@@ -11,12 +11,17 @@
 	
 	<body>
 		<div class="layout">
-			<header class="site-header"> <!-- ヘッダー -->
-				<button class="btn">R</button> 
+		
+			 <!-- ヘッダー -->
+			<header class="site-header">
+				<button class="header-btn">R</button> 
 				<p><b>RPCホーム</p>
 			</header>
-			
-			<aside class="sidebar"> <!-- サイドバー -->
+			 <!-- ヘッダーここまで -->
+			 
+			 
+			<!-- サイドバー -->
+			<aside class="sidebar"> 
 				<div class="side-menu">
 					<div class="side-item">
 						<a href="#card" class="side-title">カード</a>
@@ -32,7 +37,26 @@
 					</div>
 				</div>
       		</aside>
+			<!-- サイドバーここまで -->
 			
+			<!-- メイン -->
+			<main  class="main">
+				<h1>デザイン</h1>
+				<div class="design-box">
+					<article class="box"> <!-- 1つのコンテンツブロック（記事やカード）を表す要素 -->
+						<h3 class="ribbon">カード</h3> <!-- 小見出し（カードタイトル）。「ribbon」は装飾クラス -->
+						<p>margin / border / padding / shadow / radius / background / typography</p> <!-- カード内の説明文 -->
+						<div class="cluster"> <!-- ボタン群を横並びなどで配置するためのグループ要素 -->
+							<button class="design-btn">色のあるボタン</button> <!-- 通常のボタン -->
+							<button class="design-btn btn--ghost">色のないボタン</button> <!-- 枠線だけのボタン（ゴーストボタン） -->
+							<button class="design-btn" disabled>無効ボタン</button> <!-- 押せない（無効化された）ボタン -->
+						</div> <!-- cluster終了 -->
+					</article> <!-- box終了 -->
+				
+				
+				</div>
+			</main>
+			<!-- メインここまで -->
 			
 		</div>
 	
