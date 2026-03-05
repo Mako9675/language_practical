@@ -1,19 +1,28 @@
 
 
-/*ヘッダーの要素*/
+/*全体の要素*/
 
 .layout{
 	display: grid; /* 要素をグリッドレイアウトにする（子要素をマス目状に配置できるようにする） */
 	width: 100%;
 	grid-template:
     "header header" auto /* 1行目：1列すべてヘッダー */
-    "side   main  " auto /* 2行目 */
+    "side   main  " minmax(250px, 1fr) /* 2行目 */
     "footer footer" auto /* 3行目：3列すべてフッター */
-    / 200px 1fr;/* 列幅：200px,残りスペースいっぱい(1fr) */
+    / 250px 1fr;/* 列幅：200px,残りスペースいっぱい(1fr) */
 }
 
+a{
+	display: block; /*ブロック要素？*/
+	text-decoration:none; /*下線を消す*/
+	color:black; /*文字色を黒*/
+	a  text-decoration: none; /*不変にする*/
+}
+
+/*ヘッダーの要素*/
+
 .site-header{
-	display:flex;
+	display: flex; /*横並び*/
 	align-items: center;
 	grid-area:header; /* grid-templateで指定した"header"のエリアに配置 */
 	border-bottom: 1px solid #dcdcdc; /*薄いグレーのライン*/
@@ -37,32 +46,23 @@
 }
 
 .side-menu{
-	display: flex;
 	flex-direction: column; /*縦に並べる*/
 	/*width: 200px; 横幅200px*/
 }
 
 .side-item{
-	display: flex;
+	display: flex; /*横並び*/
 	position: relative; /*要素の配置と子要素の起点を指定*/
 	align-items: center; /*フレックス軸（縦方向）で中央揃え*/
-	padding:10px; /*周りに10px*/
+	/*padding:10px; 周りに10px*/
 	width: 100%; /*横幅いっぱい*/
-	margin:5px; /*外側に10px*/
+	height: 60px;
 	gap:8px; /*要素のあいだの隙間*/
 	border-radius:10px; /*丸くする*/
 	/*background: #4169e1; いったんわかりやすくする用*/
 }
 
-a{
-	display: block; /*ブロック要素？*/
-	text-decoration:none; /*下線を消す*/
-	/*color:white; 文字色を白*/
-	a  text-decoration: none; /*不変にする*/
-}
-
 .side-item:hover{
-	display: flex; /*ブロック要素？*/
 	/*background: #ffff00; いったんわかりやすくする用*/
 	background: #dcdcdc
 }
@@ -82,24 +82,32 @@ a{
 	color:#a9a9a9;
 }
 
+.side-item {
+	margin:5px; /*外側に10px*/
+}
+
 
 /*メインの要素*/
 
 
 .main{
 	grid-area:main; /* grid-templateで指定した"main"のエリアに配置 */
-	display:flex;
+	flex-direction: column; /* 要素を縦方向に並べる */
 	border-left: 1px solid #dcdcdc; /*薄いグレーのライン*/
-	background: #4169e1; いったんわかりやすくする用*/
+	/*background: #4169e1; いったんわかりやすくする用*/
 }
 
-.design-box {
+h1 {
+	padding-left: 30px;
+
+}
+
+.contents {
 	display: flex; /* 内部の要素（カード）を横並びにするフレックスレイアウトを使用 */
 	border-radius: 16px; /* 角を16px丸くする */
 }
 
-.box {
-	display: flex; /* フレックスボックスで内部要素を配置 */
+.box-design {
 	flex-direction: column; /* 要素を縦方向に並べる */
 	gap: 8px; /* 要素間の間隔を8pxに設定 */
 	width: 80%; /* カードの幅を80% */
@@ -121,7 +129,7 @@ a{
 }
 
 .cluster {
-	display: flex; /* ボタンを横方向に並べる */
+	display: flex; /*横並び*/
 	flex-wrap: wrap; /* 横幅を超えた場合、自動で折り返す */
 	gap: 8px; /* ボタン同士の間に8pxのすき間をつくる */
 	margin-top: 8px; /* 上に8pxの余白をつけて本文と間隔を取る */
@@ -152,3 +160,30 @@ a{
 	background: transparent; /* 背景を透明にしてフラットな印象に */
 	border: 1px solid rgb(217 221 228 / 70%); /* 薄いグレーの枠線をつける */
 	box-shadow: none; /* 通常の影を削除（すっきりした見た目） */
+}
+
+.box-form {
+	flex-direction: column; /* 要素を縦方向に並べる */
+	gap: 8px; /* 要素間の間隔を8pxに設定 */
+	width: 80%; /* カードの幅を80% */
+	padding: 14px; /* 内側余白を14pxに設定 */
+	margin: 14px; /* 外側余白を14pxに設定（カード同士の間隔） */
+	background: rgb(255 255 255 / 70%); /* 背景を白70%の透過で設定 */
+	border: 2px solid rgb(217 221 228 / 70%); /* 薄いグレーの枠線を付ける */
+	border-radius: 14px; /* 角丸を14pxに設定 */
+	box-shadow: 0 10px 30px rgb(4 7 10 / 12%); /* 下にやわらかい影をつけて立体感を出す */
+}
+
+
+/*フッターの要素*/
+
+.site-footer {
+	display: flex; /*横並び*/
+	align-items: center;
+	grid-area:footer; /* grid-templateで指定した"footer"のエリアに配置 */
+	border-top: 1px solid #dcdcdc; /*薄いグレーのライン*/
+}
+
+.top-link{
+	margin-left:auto;
+}
