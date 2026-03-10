@@ -12,12 +12,6 @@
     / 250px 1fr;/* 列幅：200px,残りスペースいっぱい(1fr) */
 }
 
-a{
-	display: block; /*ブロック要素？*/
-	text-decoration:none; /*下線を消す*/
-	color:black; /*文字色を黒*/
-	a  text-decoration: none; /*不変にする*/
-}
 
 /*ヘッダーの要素*/
 
@@ -54,12 +48,21 @@ a{
 	display: flex; /*横並び*/
 	position: relative; /*要素の配置と子要素の起点を指定*/
 	align-items: center; /*フレックス軸（縦方向）で中央揃え*/
-	/*padding:10px; 周りに10px*/
-	width: 100%; /*横幅いっぱい*/
+	width: 100%;
 	height: 60px;
 	gap:8px; /*要素のあいだの隙間*/
 	border-radius:10px; /*丸くする*/
 	/*background: #4169e1; いったんわかりやすくする用*/
+}
+
+.side-item a{
+	position: absolute;
+	display: block; /*ブロック要素？*/
+	text-decoration:none; /*下線を消す*/
+	color:black; /*文字色を黒*/
+	a  text-decoration: none; /*不変にする*/
+	width: 100%;
+	padding: 20px 10px; /*いい感じに整える*/
 }
 
 .side-item:hover{
@@ -82,10 +85,6 @@ a{
 	color:#a9a9a9;
 }
 
-.side-item {
-	/*margin:5px; 外側に10px*/
-}
-
 
 /*メインの要素*/
 
@@ -105,6 +104,8 @@ h1 {
 .contents {
 	display: flex; /* 内部の要素（カード）を横並びにするフレックスレイアウトを使用 */
 	border-radius: 16px; /* 角を16px丸くする */
+	justify-content: center; /*左右の中央*/
+	align-items: center; /*上下の中央*/
 }
 
 .box-design {
