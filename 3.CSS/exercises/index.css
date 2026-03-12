@@ -1,6 +1,6 @@
 
 
-/*全体の要素*/
+/* ☆全体の要素☆ */
 
 .layout{
 	display: grid; /* 要素をグリッドレイアウトにする（子要素をマス目状に配置できるようにする） */
@@ -13,7 +13,7 @@
 }
 
 
-/*ヘッダーの要素*/
+/* ☆ヘッダーの要素☆ */
 
 .site-header{
 	display: flex; /*横並び*/
@@ -33,7 +33,7 @@
 }
 
 
-/*サイドバーの要素*/
+/* ☆サイドバーの要素☆ */
 
 .sidebar{
 	grid-area:side; /* grid-templateで指定した"side"のエリアに配置 */
@@ -86,7 +86,7 @@
 }
 
 
-/*メインの要素*/
+/* ☆メインの要素☆ */
 
 
 .main{
@@ -108,6 +108,7 @@ h1 {
 	align-items: center; /*上下の中央*/
 }
 
+/* -カード- */
 .box-design {
 	flex-direction: column; /* 要素を縦方向に並べる */
 	gap: 8px; /* 要素間の間隔を8pxに設定 */
@@ -163,7 +164,75 @@ h1 {
 	box-shadow: none; /* 通常の影を削除（すっきりした見た目） */
 }
 
+
+/* -フォーム- */
 .box-form {
+	flex-direction: column; /* 要素を縦方向に並べる */
+	gap: 8px; /* 要素間の間隔を8pxに設定 */
+	width: 100%; /* カードの幅を80% */
+	padding: 14px; /* 内側余白を14pxに設定 */
+	margin: 14px; /* 外側余白を14pxに設定（カード同士の間隔） */
+	background: rgb(255 255 255 / 70%); /* 背景を白70%の透過で設定 */
+	border: 2px solid #7fffbf; /* 緑色の枠線を付ける */
+	border-radius: 14px; /* 角丸を14pxに設定 */
+}
+
+.box-form-item {
+	justify-content: center; /*左右の中央*/
+}
+
+input {
+	width: 95%;
+	padding: 8px; /* 入力欄の内側余白を8pxに設定（テキストと枠の距離を確保） */
+	outline: none; /* フォーカス時のデフォルトの青い枠を非表示にする */
+	border: 1px solid #ccc; /* グレーの2px実線枠を表示 */
+	border-radius: 6px; /* 角を6px丸める */
+}
+
+input:focus {
+	border-color: #7fffbf; /* 入力欄をクリック・選択したときに枠線を緑色に変更 */
+	border: 5px solid #7fffbf; /* フォーカスを強調 */
+}
+
+/* -FlexBox- */
+.Not-line {
+	flex-direction: column; /* 要素を縦方向に並べる */
+	gap: 8px; /* 要素間の間隔を8pxに設定 */
+	width: 100%; /* カードの幅を80% */
+	padding: 14px; /* 内側余白を14pxに設定 */
+	margin: 14px; /* 外側余白を14pxに設定（カード同士の間隔） */
+	background: rgb(255 255 255 / 70%); /* 背景を白70%の透過で設定 */
+	border-radius: 14px; /* 角丸を14pxに設定 */
+}
+
+.Flexbox-btn {
+	display: inline-flex; /* インライン要素として扱いながら、フレックス整列を使用可能にする */
+	gap: 8px; /* 内部のテキストとアイコンなどの間に8pxの間隔を作る */
+	align-items: center; /* 縦方向（上下）を中央揃えにする */
+	justify-content: center; /* 横方向（左右）を中央揃えにする */
+	height: 40px; /* ボタンの高さを40pxに設定 */
+	padding: 0 14px; /* 左右に14pxの内側余白をつける */
+	color: white; /* 文字色を白に設定 */
+	background: #34d399; /* 明るい緑色の背景を設定（メインカラー） */
+	border: 0; /* 枠線をなくす */
+	border-radius: 999px; /* 丸みを最大にして「ピル型ボタン」にする */
+	box-shadow: 0 10px 30px rgb(4 7 10 / 12%); /* やわらかい影で浮いたような見た目にする */
+}
+
+.btn--ghost {
+	color: #1f2530; /* テキストを濃いグレーに設定 */
+	background: transparent; /* 背景を透明にしてフラットな印象に */
+	border: 1px solid rgb(217 221 228 / 70%); /* 薄いグレーの枠線をつける */
+	box-shadow: none; /* 通常の影を削除（すっきりした見た目） */
+}
+
+/* -レスポンシブ- */
+
+.responce-item {
+	display: flex; /*横並び*/
+}
+
+.responce-card {
 	flex-direction: column; /* 要素を縦方向に並べる */
 	gap: 8px; /* 要素間の間隔を8pxに設定 */
 	width: 80%; /* カードの幅を80% */
@@ -176,7 +245,8 @@ h1 {
 }
 
 
-/*フッターの要素*/
+
+/* ☆フッターの要素☆ */
 
 .site-footer {
 	display: flex; /*横並び*/
