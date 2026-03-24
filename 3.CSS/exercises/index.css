@@ -32,6 +32,12 @@
 	margin-right:10px; /*左に余白*/
 }
 
+/*リセットCSS*/
+p{
+	margin:0;
+	padding:0;
+}
+
 
 /* ☆サイドバーの要素☆ */
 
@@ -169,7 +175,7 @@ h1 {
 .box-form {
 	flex-direction: column; /* 要素を縦方向に並べる */
 	gap: 8px; /* 要素間の間隔を8pxに設定 */
-	width: 100%; /* カードの幅を80% */
+	width: 95%; /* カードの幅を80% */
 	padding: 14px; /* 内側余白を14pxに設定 */
 	margin: 14px; /* 外側余白を14pxに設定（カード同士の間隔） */
 	background: rgb(255 255 255 / 70%); /* 背景を白70%の透過で設定 */
@@ -181,18 +187,35 @@ h1 {
 	justify-content: center; /*左右の中央*/
 }
 
-input {
+.emphasis-form {
 	width: 95%;
 	padding: 8px; /* 入力欄の内側余白を8pxに設定（テキストと枠の距離を確保） */
+	margin: 14px; /* 外側余白を14pxに設定（カード同士の間隔） */
 	outline: none; /* フォーカス時のデフォルトの青い枠を非表示にする */
 	border: 1px solid #ccc; /* グレーの2px実線枠を表示 */
 	border-radius: 6px; /* 角を6px丸める */
 }
 
-input:focus {
+.emphasis-form:focus {
 	border-color: #7fffbf; /* 入力欄をクリック・選択したときに枠線を緑色に変更 */
 	border: 5px solid #7fffbf; /* フォーカスを強調 */
 }
+
+.form-bottan {
+	display: flex; /*子要素に適用させる*/
+	flex-direction: column; /* 要素を縦方向に並べる */
+	padding: 14px; /* 内側余白を14pxに設定 */
+	margin: 14px; /* 外側余白を14pxに設定（カード同士の間隔） */
+	border: 1px solid #e7e7e7; /* グレーの2px実線枠を表示 */
+	border-radius: 6px; /* 角を6px丸める */
+}
+
+label:has(input:checked){
+	background: rgb(52 211 153 / 15%); /* チェックされたときに淡い緑の背景を表示 */
+	border: 1px solid #34d399; /* 緑色の枠線を表示 */
+	border-radius: 8px; /* 角を8px丸くして柔らかい印象に */
+}
+
 
 /* -FlexBox- */
 .Not-line {
@@ -257,4 +280,18 @@ input:focus {
 
 .top-link{
 	margin-left:auto;
+}
+
+@media (width < 768px) {
+	.layout {
+		display: grid; /* 要素をグリッドレイアウトにする（子要素をマス目状に配置できるようにする） */
+		width: 100%;
+		grid-template:
+		"header header" auto /* 1行目：1列すべてヘッダー */
+		"side   side  " minmax(250px, 1fr) /* 2行目 */
+		"main   main  " minmax(250px, 1fr) /* 2行目 */
+		"footer footer" auto /* 3行目：3列すべてフッター */
+		/ 250px 1fr;/* 列幅：200px,残りスペースいっぱい(1fr) */
+		
+	}
 }
