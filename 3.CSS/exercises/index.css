@@ -41,6 +41,10 @@ p{
 
 /* ☆サイドバーの要素☆ */
 
+.side-menu li {
+    list-style: none;
+    position: relative;
+}
 .sidebar{
 	grid-area:side; /* grid-templateで指定した"side"のエリアに配置 */
 }
@@ -58,7 +62,7 @@ p{
 	height: 60px;
 	gap:8px; /*要素のあいだの隙間*/
 	border-radius:10px; /*丸くする*/
-	/*background: #4169e1; いったんわかりやすくする用*/
+	background: #ffffff;
 }
 
 .side-item a{
@@ -288,10 +292,56 @@ label:has(input:checked){
 		width: 100%;
 		grid-template:
 		"header header" auto /* 1行目：1列すべてヘッダー */
-		"side   side  " minmax(250px, 1fr) /* 2行目 */
-		"main   main  " minmax(250px, 1fr) /* 2行目 */
+		"side   side  " auto /* 2行目 */
+		"main   main  " auto /* 2行目 */
 		"footer footer" auto /* 3行目：3列すべてフッター */
 		/ 250px 1fr;/* 列幅：200px,残りスペースいっぱい(1fr) */
 		
 	}
+
+.sidebar{
+	border: 1px solid #e7e7e7; /* グレーの2px実線枠を表示 */
+	border-radius: 6px; /* 角を6px丸める */
+}
+
+
+.side-menu {
+    display: flex;
+    height: 2rem;
+    margin: 0 auto;
+    width: auto;
+}
+
+/*全てのリスト・リンク共通*/
+
+.side-menu li a {
+    color:black; /*文字色を黒*/
+    display: block;
+    height: 2rem;
+    text-align: left;
+    a  text-decoration: none; /*不変にする*/
+    text-decoration:none; /*下線を消す*/
+    width: 100%;
+}
+
+.side-menu li li {
+    height: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+
+.side-menu li:hover > ul > li {
+    height: 4rem;
+    overflow: visible;
+}
+
+
+@media (min-width: 769px) {
+  .side-menu > li:hover > ul > li,
+  .side-menu li ul li:hover > ul > li {
+    display: block;
+  }
+}
+
 }
