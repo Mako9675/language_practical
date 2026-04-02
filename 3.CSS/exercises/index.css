@@ -45,9 +45,6 @@ p{
     list-style: none;
     position: relative;
 }
-.sidebar{
-	grid-area:side; /* grid-templateで指定した"side"のエリアに配置 */
-}
 
 .side-menu{
 	flex-direction: column; /*縦に並べる*/
@@ -286,7 +283,26 @@ label:has(input:checked){
 	margin-left:auto;
 }
 
-@media (width < 768px) {
+
+
+.hover-sidebar{
+	border: 1px solid #e7e7e7; /* グレーの2px実線枠を表示 */
+	border-radius: 6px; /* 角を6px丸める */
+}
+
+
+.hover-side-menu {
+    display: flex;
+    height: 2rem;
+    margin: 0 auto;
+    width: auto;
+}
+
+/*全てのリスト・リンク共通*/
+
+
+
+@media (width < 1080px) {
 	.layout {
 		display: grid; /* 要素をグリッドレイアウトにする（子要素をマス目状に配置できるようにする） */
 		width: 100%;
@@ -296,52 +312,65 @@ label:has(input:checked){
 		"main   main  " auto /* 2行目 */
 		"footer footer" auto /* 3行目：3列すべてフッター */
 		/ 250px 1fr;/* 列幅：200px,残りスペースいっぱい(1fr) */
-		
 	}
 
-.sidebar{
-	border: 1px solid #e7e7e7; /* グレーの2px実線枠を表示 */
-	border-radius: 6px; /* 角を6px丸める */
+	.hover-sidebar{
+		grid-area:side; /* grid-templateで指定した"side"のエリアに配置 */
+	}
+	
+	.fixed-sidebar{
+		display: none; /*非表示*/
+	}
+
+	.sidebar{
+		border: 1px solid #e7e7e7; /* グレーの2px実線枠を表示 */
+		border-radius: 6px; /* 角を6px丸める */
+	}
+
+
+	.side-menu {
+	    display: flex;
+	    height: 2rem;
+	    margin: 0 auto;
+	    width: auto;
+	}
+
+	.side-menu li a {
+	    color:black; /*文字色を黒*/
+	    display: block;
+	    height: 2rem;
+	    text-align: left;
+	    a  text-decoration: none; /*不変にする*/
+	    text-decoration:none; /*下線を消す*/
+	    width: 100%;
+	}
+
+	.side-menu li li {
+	    height: 0;
+	    overflow: hidden;
+	    transition: .5s;
+	}
+
+
+	.side-menu li:hover > ul > li {
+	    height: 4rem;
+	    overflow: visible;
+	}
+
 }
 
-
-.side-menu {
-    display: flex;
-    height: 2rem;
-    margin: 0 auto;
-    width: auto;
+@media (min-width: 1081px) {
+	.hover-sidebar{
+		display: none; /*非表示*/
+	}
+	
+	.fixed-sidebar{
+		grid-area:side; /* grid-templateで指定した"side"のエリアに配置 */
+	}
 }
 
-/*全てのリスト・リンク共通*/
-
-.side-menu li a {
-    color:black; /*文字色を黒*/
-    display: block;
-    height: 2rem;
-    text-align: left;
-    a  text-decoration: none; /*不変にする*/
-    text-decoration:none; /*下線を消す*/
-    width: 100%;
-}
-
-.side-menu li li {
-    height: 0;
-    overflow: hidden;
-    transition: .5s;
-}
-
-
-.side-menu li:hover > ul > li {
-    height: 4rem;
-    overflow: visible;
-}
-
-
-@media (min-width: 769px) {
-  .side-menu > li:hover > ul > li,
-  .side-menu li ul li:hover > ul > li {
-    display: block;
-  }
-}
-
+@media (width < 720px) {
+	.responce-item {
+		flex-direction: column; /* 要素を縦方向に並べる */
+	}
 }
