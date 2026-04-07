@@ -67,7 +67,7 @@ p{
 	display: block; /*ブロック要素？*/
 	text-decoration:none; /*下線を消す*/
 	color:black; /*文字色を黒*/
-	a  text-decoration: none; /*不変にする*/
+	text-decoration: none; /*不変にする*/
 	width: 100%;
 	padding: 20px 10px; /*いい感じに整える*/
 }
