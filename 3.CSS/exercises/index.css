@@ -184,9 +184,6 @@ h1 {
 	border-radius: 14px; /* 角丸を14pxに設定 */
 }
 
-.box-form-item {
-	justify-content: center; /*左右の中央*/
-}
 
 .emphasis-form {
 	width: 95%;
