@@ -229,6 +229,12 @@ label:has(input:checked){
 	border-radius: 14px; /* 角丸を14pxに設定 */
 }
 
+.Flexbox-btn:first-child {
+	color: white; /* 文字色を白に設定 */
+	background: #34d399; /* 明るい緑色の背景を設定（メインカラー） */
+	border: 0; /* 枠線をなくす */
+}
+
 .Flexbox-btn {
 	display: inline-flex; /* インライン要素として扱いながら、フレックス整列を使用可能にする */
 	gap: 8px; /* 内部のテキストとアイコンなどの間に8pxの間隔を作る */
@@ -236,18 +242,10 @@ label:has(input:checked){
 	justify-content: center; /* 横方向（左右）を中央揃えにする */
 	height: 40px; /* ボタンの高さを40pxに設定 */
 	padding: 0 14px; /* 左右に14pxの内側余白をつける */
-	color: white; /* 文字色を白に設定 */
-	background: #34d399; /* 明るい緑色の背景を設定（メインカラー） */
-	border: 0; /* 枠線をなくす */
-	border-radius: 999px; /* 丸みを最大にして「ピル型ボタン」にする */
-	box-shadow: 0 10px 30px rgb(4 7 10 / 12%); /* やわらかい影で浮いたような見た目にする */
-}
-
-.btn--ghost {
 	color: #1f2530; /* テキストを濃いグレーに設定 */
 	background: transparent; /* 背景を透明にしてフラットな印象に */
 	border: 1px solid rgb(217 221 228 / 70%); /* 薄いグレーの枠線をつける */
-	box-shadow: none; /* 通常の影を削除（すっきりした見た目） */
+	border-radius: 999px; /* 丸みを最大にして「ピル型ボタン」にする */
 }
 
 /* -レスポンシブ- */
