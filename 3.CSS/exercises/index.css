@@ -199,7 +199,7 @@ h1 {
 	border: 5px solid #7fffbf; /* フォーカスを強調 */
 }
 
-.form-bottan {
+.form-button {
 	display: flex; /*子要素に適用させる*/
 	flex-direction: column; /* 要素を縦方向に並べる */
 	padding: 14px; /* 内側余白を14pxに設定 */
@@ -247,11 +247,11 @@ label:has(input:checked){
 
 /* -レスポンシブ- */
 
-.responce-item {
+.response-item {
 	display: flex; /*横並び*/
 }
 
-.responce-card {
+.response-card {
 	flex-direction: column; /* 要素を縦方向に並べる */
 	gap: 8px; /* 要素間の間隔を8pxに設定 */
 	width: 80%; /* カードの幅を80% */
@@ -365,7 +365,7 @@ label:has(input:checked){
 }
 
 @media (width < 720px) {
-	.responce-item {
+	.response-item {
 		flex-direction: column; /* 要素を縦方向に並べる */
 	}
 }
