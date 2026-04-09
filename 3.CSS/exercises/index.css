@@ -1,0 +1,371 @@
+
+
+/* ☆全体の要素☆ */
+
+.layout{
+	display: grid; /* 要素をグリッドレイアウトにする（子要素をマス目状に配置できるようにする） */
+	width: 100%;
+	grid-template:
+    "header header" auto /* 1行目：1列すべてヘッダー */
+    "side   main  " minmax(250px, 1fr) /* 2行目 */
+    "footer footer" auto /* 3行目：3列すべてフッター */
+    / 250px 1fr;/* 列幅：200px,残りスペースいっぱい(1fr) */
+}
+
+
+/* ☆ヘッダーの要素☆ */
+
+.site-header{
+	display: flex; /*横並び*/
+	align-items: center;
+	grid-area:header; /* grid-templateで指定した"header"のエリアに配置 */
+	border-bottom: 1px solid #dcdcdc; /*薄いグレーのライン*/
+}
+
+.header-btn{
+	width:35px;
+	height:35px;
+	color:white; /*文字色を白*/
+	background:#2bb07b; /*背景色を緑*/
+	border:none; /*枠線なし*/
+	border-radius:50%; /*丸くする*/
+	margin-right:10px; /*左に余白*/
+}
+
+/*リセットCSS*/
+p{
+	margin:0;
+	padding:0;
+}
+
+
+/* ☆サイドバーの要素☆ */
+
+.side-menu li {
+    list-style: none;
+    position: relative;
+}
+
+.side-menu{
+	flex-direction: column; /*縦に並べる*/
+	/*width: 200px; 横幅200px*/
+}
+
+.side-item{
+	display: flex; /*横並び*/
+	position: relative; /*要素の配置と子要素の起点を指定*/
+	align-items: center; /*フレックス軸（縦方向）で中央揃え*/
+	width: 100%;
+	height: 60px;
+	gap:8px; /*要素のあいだの隙間*/
+	border-radius:10px; /*丸くする*/
+	background: #ffffff;
+}
+
+.side-item a{
+	position: absolute;
+	display: block; /*ブロック要素？*/
+	text-decoration:none; /*下線を消す*/
+	color:black; /*文字色を黒*/
+	text-decoration: none; /*不変にする*/
+	width: 100%;
+	padding: 20px 10px; /*いい感じに整える*/
+}
+
+.side-item:hover{
+	/*background: #ffff00; いったんわかりやすくする用*/
+	background: #dcdcdc
+}
+
+.side-item::before{
+	width:8px;
+	height:34px;
+	content:"";
+	display: block;
+	background:#f28b82;
+}
+
+.side-item::after{
+	position:  absolute; /*要素の配置を指定*/
+	right:30px;
+	content:">>";
+	color:#a9a9a9;
+}
+
+
+/* ☆メインの要素☆ */
+
+
+.main{
+	grid-area:main; /* grid-templateで指定した"main"のエリアに配置 */
+	flex-direction: column; /* 要素を縦方向に並べる */
+	border-left: 1px solid #dcdcdc; /*薄いグレーのライン*/
+	/*background: #4169e1; いったんわかりやすくする用*/
+}
+
+h1 {
+	padding-left: 30px;
+
+}
+
+.contents {
+	display: flex; /* 内部の要素（カード）を横並びにするフレックスレイアウトを使用 */
+	border-radius: 16px; /* 角を16px丸くする */
+	justify-content: center; /*左右の中央*/
+	align-items: center; /*上下の中央*/
+}
+
+/* -カード- */
+.box-design {
+	flex-direction: column; /* 要素を縦方向に並べる */
+	gap: 8px; /* 要素間の間隔を8pxに設定 */
+	width: 80%; /* カードの幅を80% */
+	padding: 14px; /* 内側余白を14pxに設定 */
+	margin: 14px; /* 外側余白を14pxに設定（カード同士の間隔） */
+	background: rgb(255 255 255 / 70%); /* 背景を白70%の透過で設定 */
+	border: 2px solid rgb(217 221 228 / 70%); /* 薄いグレーの枠線を付ける */
+	border-radius: 14px; /* 角丸を14pxに設定 */
+	box-shadow: 0 10px 30px rgb(4 7 10 / 12%); /* 下にやわらかい影をつけて立体感を出す */
+}
+
+.ribbon {
+	display: inline-block; /* インライン要素として扱いつつ、幅や高さを指定可能に */
+	width: 60px;
+	padding: 4px 8px; /* 上下4px、左右8pxの内側余白を確保 */
+	color: white; /* 文字色を白に設定 */
+	background: #34d399; /* 明るい緑色を背景に設定（アクセントカラー） */
+	border-radius: 8px; /* 角を8px丸くしてバッジのように見せる */
+}
+
+.cluster {
+	display: flex; /*横並び*/
+	flex-wrap: wrap; /* 横幅を超えた場合、自動で折り返す */
+	gap: 8px; /* ボタン同士の間に8pxのすき間をつくる */
+	margin-top: 8px; /* 上に8pxの余白をつけて本文と間隔を取る */
+}
+
+.design-btn {
+	display: inline-flex; /* インライン要素として扱いながら、フレックス整列を使用可能にする */
+	gap: 8px; /* 内部のテキストとアイコンなどの間に8pxの間隔を作る */
+	align-items: center; /* 縦方向（上下）を中央揃えにする */
+	justify-content: center; /* 横方向（左右）を中央揃えにする */
+	height: 40px; /* ボタンの高さを40pxに設定 */
+	padding: 0 14px; /* 左右に14pxの内側余白をつける */
+	font-weight: 800; /* 文字を太字にする */
+	color: white; /* 文字色を白に設定 */
+	background: #34d399; /* 明るい緑色の背景を設定（メインカラー） */
+	border: 0; /* 枠線をなくす */
+	border-radius: 999px; /* 丸みを最大にして「ピル型ボタン」にする */
+	box-shadow: 0 10px 30px rgb(4 7 10 / 12%); /* やわらかい影で浮いたような見た目にする */
+}
+
+.design-btn:disabled {
+	cursor: not-allowed; /* カーソルを「禁止マーク」に変更 */
+	opacity: 0.55; /* 半透明にして無効化を視覚的に示す */
+}
+
+.btn--ghost {
+	color: #1f2530; /* テキストを濃いグレーに設定 */
+	background: transparent; /* 背景を透明にしてフラットな印象に */
+	border: 1px solid rgb(217 221 228 / 70%); /* 薄いグレーの枠線をつける */
+	box-shadow: none; /* 通常の影を削除（すっきりした見た目） */
+}
+
+
+/* -フォーム- */
+.box-form {
+	flex-direction: column; /* 要素を縦方向に並べる */
+	gap: 8px; /* 要素間の間隔を8pxに設定 */
+	width: 95%; /* カードの幅を80% */
+	padding: 14px; /* 内側余白を14pxに設定 */
+	margin: 14px; /* 外側余白を14pxに設定（カード同士の間隔） */
+	background: rgb(255 255 255 / 70%); /* 背景を白70%の透過で設定 */
+	border: 2px solid #7fffbf; /* 緑色の枠線を付ける */
+	border-radius: 14px; /* 角丸を14pxに設定 */
+}
+
+
+.emphasis-form {
+	width: 95%;
+	padding: 8px; /* 入力欄の内側余白を8pxに設定（テキストと枠の距離を確保） */
+	margin: 14px; /* 外側余白を14pxに設定（カード同士の間隔） */
+	outline: none; /* フォーカス時のデフォルトの青い枠を非表示にする */
+	border: 1px solid #ccc; /* グレーの2px実線枠を表示 */
+	border-radius: 6px; /* 角を6px丸める */
+}
+
+.emphasis-form:focus {
+	border-color: #7fffbf; /* 入力欄をクリック・選択したときに枠線を緑色に変更 */
+	border: 5px solid #7fffbf; /* フォーカスを強調 */
+}
+
+.form-button {
+	display: flex; /*子要素に適用させる*/
+	flex-direction: column; /* 要素を縦方向に並べる */
+	padding: 14px; /* 内側余白を14pxに設定 */
+	margin: 14px; /* 外側余白を14pxに設定（カード同士の間隔） */
+	border: 1px solid #e7e7e7; /* グレーの2px実線枠を表示 */
+	border-radius: 6px; /* 角を6px丸める */
+}
+
+label:has(input:checked){
+	background: rgb(52 211 153 / 15%); /* チェックされたときに淡い緑の背景を表示 */
+	border: 1px solid #34d399; /* 緑色の枠線を表示 */
+	border-radius: 8px; /* 角を8px丸くして柔らかい印象に */
+}
+
+
+/* -FlexBox- */
+.Not-line {
+	flex-direction: column; /* 要素を縦方向に並べる */
+	gap: 8px; /* 要素間の間隔を8pxに設定 */
+	width: 100%; /* カードの幅を80% */
+	padding: 14px; /* 内側余白を14pxに設定 */
+	margin: 14px; /* 外側余白を14pxに設定（カード同士の間隔） */
+	background: rgb(255 255 255 / 70%); /* 背景を白70%の透過で設定 */
+	border-radius: 14px; /* 角丸を14pxに設定 */
+}
+
+.Flexbox-btn:first-child {
+	color: white; /* 文字色を白に設定 */
+	background: #34d399; /* 明るい緑色の背景を設定（メインカラー） */
+	border: 0; /* 枠線をなくす */
+}
+
+.Flexbox-btn {
+	display: inline-flex; /* インライン要素として扱いながら、フレックス整列を使用可能にする */
+	gap: 8px; /* 内部のテキストとアイコンなどの間に8pxの間隔を作る */
+	align-items: center; /* 縦方向（上下）を中央揃えにする */
+	justify-content: center; /* 横方向（左右）を中央揃えにする */
+	height: 40px; /* ボタンの高さを40pxに設定 */
+	padding: 0 14px; /* 左右に14pxの内側余白をつける */
+	color: #1f2530; /* テキストを濃いグレーに設定 */
+	background: transparent; /* 背景を透明にしてフラットな印象に */
+	border: 1px solid rgb(217 221 228 / 70%); /* 薄いグレーの枠線をつける */
+	border-radius: 999px; /* 丸みを最大にして「ピル型ボタン」にする */
+}
+
+/* -レスポンシブ- */
+
+.response-item {
+	display: flex; /*横並び*/
+}
+
+.response-card {
+	flex-direction: column; /* 要素を縦方向に並べる */
+	gap: 8px; /* 要素間の間隔を8pxに設定 */
+	width: 80%; /* カードの幅を80% */
+	padding: 14px; /* 内側余白を14pxに設定 */
+	margin: 14px; /* 外側余白を14pxに設定（カード同士の間隔） */
+	background: rgb(255 255 255 / 70%); /* 背景を白70%の透過で設定 */
+	border: 2px solid rgb(217 221 228 / 70%); /* 薄いグレーの枠線を付ける */
+	border-radius: 14px; /* 角丸を14pxに設定 */
+	box-shadow: 0 10px 30px rgb(4 7 10 / 12%); /* 下にやわらかい影をつけて立体感を出す */
+}
+
+
+
+/* ☆フッターの要素☆ */
+
+.site-footer {
+	display: flex; /*横並び*/
+	align-items: center;
+	grid-area:footer; /* grid-templateで指定した"footer"のエリアに配置 */
+	border-top: 1px solid #dcdcdc; /*薄いグレーのライン*/
+}
+
+.top-link{
+	margin-left:auto;
+}
+
+
+
+.hover-sidebar{
+	border: 1px solid #e7e7e7; /* グレーの2px実線枠を表示 */
+	border-radius: 6px; /* 角を6px丸める */
+}
+
+
+.hover-side-menu {
+    display: flex;
+    height: 2rem;
+    margin: 0 auto;
+    width: auto;
+}
+
+/*全てのリスト・リンク共通*/
+
+
+
+@media (width < 1080px) {
+	.layout {
+		display: grid; /* 要素をグリッドレイアウトにする（子要素をマス目状に配置できるようにする） */
+		width: 100%;
+		grid-template:
+		"header header" auto /* 1行目：1列すべてヘッダー */
+		"side   side  " auto /* 2行目 */
+		"main   main  " auto /* 2行目 */
+		"footer footer" auto /* 3行目：3列すべてフッター */
+		/ 250px 1fr;/* 列幅：200px,残りスペースいっぱい(1fr) */
+	}
+
+	.hover-sidebar{
+		grid-area:side; /* grid-templateで指定した"side"のエリアに配置 */
+	}
+	
+	.fixed-sidebar{
+		display: none; /*非表示*/
+	}
+
+	.sidebar{
+		border: 1px solid #e7e7e7; /* グレーの2px実線枠を表示 */
+		border-radius: 6px; /* 角を6px丸める */
+	}
+
+
+	.side-menu {
+	    display: flex;
+	    height: 2rem;
+	    margin: 0 auto;
+	    width: auto;
+	}
+
+	.side-menu li a {
+	    color:black; /*文字色を黒*/
+	    display: block;
+	    height: 2rem;
+	    text-align: left;
+	    a  text-decoration: none; /*不変にする*/
+	    text-decoration:none; /*下線を消す*/
+	    width: 100%;
+	}
+
+	.side-menu li li {
+	    height: 0;
+	    overflow: hidden;
+	    transition: .5s;
+	}
+
+
+	.side-menu li:hover > ul > li {
+	    height: 4rem;
+	    overflow: visible;
+	}
+
+}
+
+@media (min-width: 1081px) {
+	.hover-sidebar{
+		display: none; /*非表示*/
+	}
+	
+	.fixed-sidebar{
+		grid-area:side; /* grid-templateで指定した"side"のエリアに配置 */
+	}
+}
+
+@media (width < 720px) {
+	.response-item {
+		flex-direction: column; /* 要素を縦方向に並べる */
+	}
+}

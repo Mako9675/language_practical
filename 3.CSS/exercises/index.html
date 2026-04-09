@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+	
+	<head>
+		<title>CSS集大成</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />	<!-- 画面のサイズ設定 -->
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	
+	<body>
+		<div class="layout">
+		
+			 <!-- ヘッダー -->
+			<header class="site-header">
+				<button class="header-btn">R</button> 
+				<p><b>RPCホーム</b></p>
+			</header>
+			 <!-- ヘッダーここまで -->
+			 
+			<!-- ホバーのサイドバー -->
+			<aside class="hover-sidebar"> 
+				<ul class="side-menu">
+					<li><a href="" class="hover-menu">ジャンプ先</a>
+						<ul>
+							<li>
+								<div class="side-item">
+									<a href="#card" class="side-title">カード</a>
+								</div>
+							</li>
+							<li>
+								<div class="side-item">
+									<a href="#form" class="side-title">フォーム</a>
+								</div>
+							</li>
+							<li>
+								<div class="side-item">
+									<a href="#Flexbox" class="side-title">FlexBox</a>
+								</div>
+							</li>
+							<li>
+								<div class="side-item">
+									<a href="#response" class="side-title">レスポンシブ</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+      		</aside>
+			<!-- ホバーのサイドバーここまで -->
+			
+			<!-- 固定のサイドバー -->
+			<aside class="fixed-sidebar"> 
+				<div class="side-menu">
+					<div class="side-item">
+						<a href="#card" class="side-title">カード</a>
+					</div>
+					<div class="side-item">
+						<a href="#form" class="side-title">フォーム</a>
+					</div>
+					<div class="side-item">
+						<a href="#Flexbox" class="side-title">FlexBox</a>
+					</div>
+					<div class="side-item">
+						<a href="#response" class="side-title">レスポンシブ</a>
+					</div>
+				</div>
+      		</aside>
+			<!-- 固定サイドバーここまで -->
+			
+			<!-- メイン -->
+			<main  class="main">
+				<h1 id="top">デザイン</h1>
+				
+				<!-- カード -->
+				<div class="contents" id="card">
+					<article class="box-design"> <!-- 1つのコンテンツブロック（記事やカード）を表す要素 -->
+						<h3 class="ribbon">カード</h3> <!-- 小見出し（カードタイトル）。「ribbon」は装飾クラス -->
+						<p>margin / border / padding / shadow / radius / background / typography</p> <!-- カード内の説明文 -->
+						<div class="cluster"> <!-- ボタン群を横並びなどで配置するためのグループ要素 -->
+							<button class="design-btn">色のあるボタン</button> <!-- 通常のボタン -->
+							<button class="design-btn btn--ghost">色のないボタン</button> <!-- 枠線だけのボタン（ゴーストボタン） -->
+							<button class="design-btn" disabled>無効ボタン</button> <!-- 押せない（無効化された）ボタン -->
+						</div> <!-- cluster終了 -->
+					</article> <!-- box終了 -->
+				</div>
+				<!-- カードここまで -->
+				
+				<!-- フォーム -->
+				<div class="contents">
+					<article class="box-form"> <!-- 1つのコンテンツブロック（記事やカード）を表す要素 -->
+						<h2 id="form">フォーム</h2>
+						<div class="box-form-item">
+							<p>名前</p>
+							<input class="emphasis-form" type="text" placeholder="フォーカスで枠を強調" /> <!-- テキスト入力欄 -->
+						</div>
+						<div class="form-button">
+							<p>性別(テキスト部分も選択可、チェックした項目は背景色を変化)</p>
+							<label>
+								<input type="radio" name="gender" value="male" />男性
+							</label> <!-- ラジオボタン：男性 -->
+							<label class="radio-gender">
+								<input type="radio" name="gender" value="female" />女性
+							</label> <!-- ラジオボタン：女性 -->
+							<label class="radio-gender">
+								<input type="radio" name="gender" value="other" />その他
+							</label> <!-- ラジオボタン：その他 -->
+						</div>
+						<div class="box-form-item">
+							<p>都道府県(フォーカスで枠を強調)</p>
+							<select class="emphasis-form" name="prefecture"> <!-- セレクト系 -->
+								<option value="1">北海道</option>
+								<option value="2">青森県</option>
+								<option value="3">岩手県</option>
+								<option value="4">宮城県</option>
+								<option value="5">秋田県</option>
+								<option value="6">山形県</option>
+								<option value="7">福島県</option>
+								<option value="8">茨城県</option>
+								<option value="9">栃木県</option>
+								<option value="10">群馬県</option>
+								<option value="11">埼玉県</option>
+								<option value="12">千葉県</option>
+								<option value="13">東京都</option>
+								<option value="14">神奈川県</option>
+								<option value="15">新潟県</option>
+								<option value="16">富山県</option>
+								<option value="17">石川県</option>
+								<option value="18">福井県</option>
+								<option value="19">山梨県</option>
+								<option value="20">長野県</option>
+								<option value="21">岐阜県</option>
+								<option value="22">静岡県</option>
+								<option value="23">愛知県</option>
+								<option value="24">三重県</option>
+								<option value="25">滋賀県</option>
+								<option value="26">京都府</option>
+								<option value="27">大阪府</option>
+								<option value="28">兵庫県</option>
+								<option value="29">奈良県</option>
+								<option value="30">和歌山県</option>
+								<option value="31">鳥取県</option>
+								<option value="32">島根県</option>
+								<option value="33">岡山県</option>
+								<option value="34">広島県</option>
+								<option value="35">山口県</option>
+								<option value="36">徳島県</option>
+								<option value="37">香川県</option>
+								<option value="38">愛媛県</option>
+								<option value="39">高知県</option>
+								<option value="40">福岡県</option>
+								<option value="41">佐賀県</option>
+								<option value="42">長崎県</option>
+								<option value="43">熊本県</option>
+								<option value="44">大分県</option>
+								<option value="45">宮崎県</option>
+								<option value="46">鹿児島県</option>
+								<option value="47">沖縄県</option>
+							</select>
+						</div>
+						<div class="form-button">
+							<p>完了課題(テキスト部分も選択可、チェックした項目は背景色を変化)</p>
+							<label>
+								<input class="check-form" type="checkbox" name="task" value="HTML" />HTML <!-- チェックボックス系 -->
+							</label>
+							<label>
+								<input class="check-form" type="checkbox" name="task" value="CSS" />CSS <!-- チェックボックス系 -->
+							</label>
+							<label>
+								<input class="check-form" type="checkbox" name="task" value="JavaScript" />JavaScript <!-- チェックボックス系 -->
+							</label>
+						</div>
+						<div class="box-form-item">
+							<p>自己紹介</p>
+							<textarea class="emphasis-form" name="self-intro"></textarea> <!-- フリーテキスト入力欄 -->
+						</div>
+					</article> <!-- box終了 -->
+				</div>
+				<!-- フォームここまで -->
+				
+				<!-- FlexBox -->
+				<div class="contents">
+					<article class="Not-line"> <!-- 1つのコンテンツブロック（記事やカード）を表す要素 -->
+						<h2 id="Flexbox">FlexBox</h2>
+						<div class="cluster"> <!-- ボタン群を横並びなどで配置するためのグループ要素 -->
+							<button class="Flexbox-btn">#css</button> <!-- 通常のボタン -->
+							<button class="Flexbox-btn">#html</button> <!-- 枠線だけのボタン（ゴーストボタン） -->
+							<button class="Flexbox-btn">#javascript</button> <!-- 枠線だけのボタン（ゴーストボタン） -->
+							<button class="Flexbox-btn">#Flexbox</button> <!-- 枠線だけのボタン（ゴーストボタン） -->
+							<button class="Flexbox-btn">#Grid</button> <!-- 枠線だけのボタン（ゴーストボタン） -->
+							<button class="Flexbox-btn">#MediaQueries</button> <!-- 枠線だけのボタン（ゴーストボタン） -->
+							<button class="Flexbox-btn">#ContainerQueries</button> <!-- 枠線だけのボタン（ゴーストボタン） -->
+						</div> <!-- cluster終了 -->
+					</article>
+				</div>
+				<!-- FlexBoxここまで -->
+				
+				
+				<!-- レスポンシブ -->
+				<div class="contents">
+					<article class="Not-line"> <!-- 1つのコンテンツブロック（記事やカード）を表す要素 -->
+						<h2 id="response">カードレイアウトでレスポンシブ</h2>
+						<div class="response-item">
+							<article class="response-card"> <!-- 1つのコンテンツブロック（記事やカード）を表す要素 -->
+								<h3>Card A</h3>
+								<p>space-betweenで等間隔</p> <!-- カード内の説明文 -->
+							</article> <!-- box終了 -->
+							
+							<article class="response-card"> <!-- 1つのコンテンツブロック（記事やカード）を表す要素 -->
+								<h3>Card B</h3>
+								<p>720pxで並び変化</p> <!-- カード内の説明文 -->
+							</article> <!-- box終了 -->
+							
+							<article class="response-card"> <!-- 1つのコンテンツブロック（記事やカード）を表す要素 -->
+								<h3>Card C</h3>
+								<p>フォーカスで枠を強調</p> <!-- カード内の説明文 -->
+							</article> <!-- box終了 -->
+							
+							<article class="response-card"> <!-- 1つのコンテンツブロック（記事やカード）を表す要素 -->
+								<h3>Card D</h3>
+								<p>影と角丸でおしゃれに</p> <!-- カード内の説明文 -->
+							</article> <!-- box終了 -->
+						</div>
+					</article> <!-- box終了 -->
+				</div>
+				<!-- レスポンシブここまで -->
+				
+				
+			</main>
+			<!-- メインここまで -->
+			
+			<!-- フッター -->
+			<footer class="site-footer">
+				<p>@RPC</p>
+				<div class="top-link">
+					<a href="#top">ページ上部へ</a>
+				</div>
+			</footer>
+			<!-- フッターここまで -->
+			
+		</div>
+	
+	
+	</body>
+
+</html>
+
