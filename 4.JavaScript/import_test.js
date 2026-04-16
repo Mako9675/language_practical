@@ -18,13 +18,21 @@ function submitButton(){
 			calcResult = textForm1 + textForm2
 			break;
 		case "minus":
-			calcResult = textForm2 - textForm1
+			calcResult = textForm1 - textForm2
+			break;
+		case "times":
+			calcResult = textForm1 * textForm2
+			break;
+		case "division":
+			calcResult = textForm1 / textForm2
 			break;
 		default:
 			alert('calc type was not selected.')
 			return false;
 	}
-	alert('結果は'+ calcResult +'です。')
+	//alert('結果は'+ calcResult +'です。')
+	document.getElementById('result').value = calcResult
+	
 }
 
 function getCalcType(){

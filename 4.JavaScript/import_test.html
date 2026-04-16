@@ -10,7 +10,7 @@
 		<div class="text_input_container">
 			<div>
 				<label for="text_form_1">入力欄①</label>
-				<input type=""text"" id="text_form_1" name="text_form_1" />
+				<input type="text" id="text_form_1" name="text_form_1" />
 			</div>
 			
 			<div>
@@ -24,9 +24,19 @@
 			<label for="radio_plus">+</label>
 			<input type="radio" id="radio_minus" name="radio_calc_type" value="minus" />
 			<label for="radio_minus">-</label>
+			<input type="radio" id="radio_times" name="radio_calc_type" value="times" />
+			<label for="radio_times">×</label>
+			<input type="radio" id="radio_division" name="radio_calc_type" value="division" />
+			<label for="radio_division">÷</label>
 		</div>
 		
 		<button id="submit">送信</button>
+		
+		<br>
+		
+		<!-- 出力するところ -->
+		<label for="result">ここに出力されます</label>
+		<input type="text" id="result" name="result" />
 		
 		<script src="import_test.js"></script>
 	</body>
