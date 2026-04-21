@@ -29,5 +29,5 @@ function submitButton(){
 	}
 	
 	//alert('結果は'+ calcResult +'です。')
-	document.getElementById('result').value = calcResult
+	$("#result").val(calcResult);
 }
